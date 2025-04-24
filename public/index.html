@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐搜索 - 在线音乐播放与下载</title>
+    <meta name="description" content="免费在线音乐搜索、播放和下载平台">
+    <meta name="keywords" content="音乐搜索,在线播放,音乐下载,免费音乐">
+    <!-- 字体和图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- 添加favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <!-- 背景效果 -->
+    <div class="background-effects">
+        <div class="particle particle-1"></div>
+        <div class="particle particle-2"></div>
+        <div class="particle particle-3"></div>
+        <div class="particle particle-4"></div>
+        <div class="particle particle-5"></div>
+    </div>
+    
+    <!-- 页头 -->
+    <header id="mainHeader">
+        <div class="container">
+            <a href="/" class="logo">
+                <i class="fas fa-compact-disc fa-spin-pulse"></i>
+                <span>音乐搜索</span>
+            </a>
+            
+            <div class="search-container">
+                <form id="searchForm" class="search-box">
+                    <input type="text" id="searchInput" placeholder="输入歌曲名或歌手名搜索..." autocomplete="off" autofocus>
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+    
+    <!-- 主内容区 -->
+    <main>
+        <div class="container">
+            <!-- 页面标题 -->
+            <div class="page-title hidden" id="pageTitleContainer">
+                <h1 id="pageTitle">音乐搜索</h1>
+                <span class="song-count" id="songCount">0</span>
+            </div>
+            
+            <!-- 结果容器 -->
+            <div class="results-container glass hidden" id="resultsContainer">
+                <div class="results-header">
+                    <span><i class="fas fa-music"></i> 歌曲</span>
+                    <span><i class="fas fa-sliders-h"></i> 操作</span>
+                </div>
+                
+                <!-- 加载指示器 -->
+                <div class="loading" id="loadingIndicator">
+                    <div class="loading-spinner"></div>
+                    <p>正在搜索音乐，请稍候...</p>
+                </div>
+                
+                <!-- 结果列表 -->
+                <div class="song-list" id="resultsList">
+                    <!-- JavaScript动态插入结果 -->
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- 音乐播放器 -->
+    <div class="music-player" id="musicPlayer">
+        <div class="player-backdrop"></div>
+        <div class="container">
+            <div class="player-content">
+                <div class="player-top">
+                    <div class="player-title" id="playerTitle">未播放任何歌曲</div>
+                    <div class="player-controls">
+                        <button class="control-btn" id="playButton">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button class="control-btn" id="stopButton">
+                            <i class="fas fa-stop"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="player-bottom">
+                    <div class="time-display" id="currentTime">00:00</div>
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-bar" id="progressBar">
+                            <div class="progress-thumb" id="progressThumb"></div>
+                        </div>
+                    </div>
+                    <div class="time-display" id="totalTime">00:00</div>
+                    
+                    <div class="volume-container">
+                        <div class="volume-icon" id="volumeIcon">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <div class="volume-slider" id="volumeSlider">
+                            <div class="volume-progress" id="volumeProgress"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 音频可视化效果将在这里添加 -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- 状态栏 -->
+    <div class="status-bar" id="statusBar">准备就绪</div>
+    
+    <!-- JavaScript -->
+    <script <link rel="stylesheet" href="/static/js/main.js"></script>
+</body>
+</html> 
